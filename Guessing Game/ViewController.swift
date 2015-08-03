@@ -16,9 +16,13 @@ class ViewController: UIViewController {
 
     @IBAction func guessButton(sender: AnyObject) {
         
-        let randomNumber = String(arc4random_uniform(6))
+    let randomNumber = String(arc4random_uniform(6))
         
-        if randomNumber == userGuess.text {
+        if userGuess.text == "" {
+            userResult.text = "Please enter a number between 0 and 5"
+        }
+        
+    if randomNumber == userGuess.text {
             userResult.text = "You're right"
         } else {
             userResult.text = "Wrong! It was a \(randomNumber)"
